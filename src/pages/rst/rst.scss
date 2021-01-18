@@ -1,0 +1,35 @@
+page-rst {
+  .nomen {
+    font-weight: 200;
+    font-size: small;
+    margin: 0;
+    padding: 0;
+  }
+
+  .date {
+    font-weight: 200;
+    font-size: 10px;
+    margin: 0;
+
+  }
+
+  .divided {
+    border: solid 0.3px gainsboro;
+    margin: 1rem;
+  }
+
+  .info{
+    background-color: #222;
+    color: white;
+    font-weight: 300;
+    font-family: monospace;
+    height: 75px;
+  }
+
+  .point {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 20px;
+  }
+}

@@ -1,0 +1,96 @@
+page-landing {
+  p{
+    font-weight: 300;
+    font-family: monospace;
+  }
+
+  small {
+    font-weight: 300;
+    font-family: monospace;
+  }
+
+  .bord{
+    border: solid;
+  }
+
+  .first {
+    margin: 0;
+    height: calc(100% - 60%);
+    background-color: #222;
+    z-index: 1;
+  }
+
+  .second {
+    margin: 0;
+    height: calc(100% - 40%);
+    background-color: white;
+    z-index: 2;
+
+  }
+
+  .intermediate {
+    z-index: 1;
+    position: relative;
+    bottom: 0px;
+    height: 50px;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+
+  .middle-qr {
+    height: 100px;
+    border-radius: 100%;
+    position: relative;
+    bottom: 60px;
+    z-index: 1;
+    background-color: gainsboro;
+    box-shadow: 1px 1px 2px rgb(221, 218, 218);
+  }
+
+  .middle-qr img {
+    width: 60%;
+    height: 60%;
+    margin-top: 1.7rem;
+  }
+
+
+  .counter {
+    position: relative;
+    bottom: 40px;
+    padding: 0.5rem;
+  }
+
+  .counter ion-col h4 {
+    color: white;
+  }
+
+  .counter ion-col small {
+    color: white;
+    font-weight: 600;
+  }
+
+  .name-user{
+    color: white;
+    font-weight: 300;
+    font-family: monospace;
+
+  }
+
+  .catg {
+    font-size: 45px;
+    color: #488aff;
+  }
+
+
+  .copyright {
+    position: relative;
+    top: 37px;
+    text-align: center;
+  }
+
+  .ion-header {
+    font-size: 10px;
+  }
+}

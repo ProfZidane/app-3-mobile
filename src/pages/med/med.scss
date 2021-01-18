@@ -1,0 +1,26 @@
+page-med {
+  small {
+    font-family: monospace;
+  }
+  .form-control{
+    border: solid 1px gainsboro;
+    margin-bottom: 2rem;
+  }
+  .btn {
+    font-family: monospace;
+  }
+  .head {
+    background-color: #222;
+    color: white;
+  }
+  .head h2 {
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
+  .head small {
+    margin-left: 0.5rem;
+  }
+  .form-validation {
+    border-radius: 10px;
+  }
+}

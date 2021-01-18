@@ -1,0 +1,52 @@
+<!--
+  Generated template for the MedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>ESATIC-MED</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content fullscreen>
+  <ion-grid class="head">
+    <h2>Formulaire de traitement médical</h2>
+    <small>Veuillez remplir soigneusement le formulaire !</small>
+  </ion-grid>
+  <ion-grid class="form-group">
+    <ion-row>
+      <ion-col col-6>
+        <small>Votre poids</small>
+        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
+      </ion-col>
+      <ion-col col-6>
+        <small>Votre taille</small>
+        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <small>Avez-vous une maladie spécifique ?</small>
+        <ion-checkbox [(ngModel)]="isSick"></ion-checkbox>
+      </ion-col>
+      <ion-col col-6>
+        <small *ngIf="isSick">Inscrire cette maladie</small>
+        <ion-input  *ngIf="isSick" class="form-control form-validation" type="text" value=""></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <small>Description du mal</small>
+        <ion-textarea class="form-control form-validation"></ion-textarea>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button block round class="btn">ENVOYER</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

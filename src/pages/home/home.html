@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <!--<ion-title>
+    </ion-title>-->
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <ion-grid class="logo" align='center'>
+   <!--<h1>ESATIC-APP</h1>-->
+   <img src="https://www.esatic.ci/images/logo-wide.png" alt="">
+  </ion-grid>
+
+  <ion-grid class="form">
+    <small>Matricule Etudiant</small>
+    <ion-input class="form-control" type="text" value=""></ion-input>
+    <small>Mot de passe</small>
+    <ion-input class="form-control" type="text" value=""></ion-input>
+
+    <br><br>
+    <button ion-button round (click)="goToLandignPage()">Se connecter</button>
+    <small style="text-align: center;">Mot de passe oublié ?</small>
+  </ion-grid>
 </ion-content>

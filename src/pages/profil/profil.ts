@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LandingPage } from '../landing/landing';
 
 /**
- * Generated class for the HomePage page.
+ * Generated class for the ProfilPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import { LandingPage } from '../landing/landing';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-profil',
+  templateUrl: 'profil.html',
 })
-export class HomePage {
+export class ProfilPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-  }
-
-  goToLandignPage() {
-    this.navCtrl.push(LandingPage);
+    console.log('ionViewDidLoad ProfilPage');
   }
 
 }

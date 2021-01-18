@@ -1,0 +1,85 @@
+<!--
+  Generated template for the LandingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="dark" style="border: none;">
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon class="ion-header" name="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon class="ion-header" name="md-notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="background-color:#222">
+  <ion-grid class="first">
+    <ion-row>
+      <ion-col col-12>
+        <ion-list no-lines>
+          <ion-item style="background-color:#222">
+            <ion-avatar item-start>
+              <img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257_960_720.png">
+            </ion-avatar>
+            <h2 class="name-user">Mohamed Zidane</h2>
+            <p>TWIN 3</p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row class="counter" align="center">
+      <ion-col col-6>
+        <h4>12</h4>
+        <small>Sorties</small>
+      </ion-col>
+      <ion-col col-6>
+        <h4>140</h4>
+        <small>Points</small>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="intermediate">
+    <ion-row>
+      <ion-col col-4 align="center">
+        <p>Code</p>
+      </ion-col>
+      <ion-col col-4 class="middle-qr" align="center">
+        <img src="https://cdn.pixabay.com/photo/2013/07/12/14/45/qr-code-148732_960_720.png" alt="">
+      </ion-col>
+      <ion-col col-4 align="center">
+        <p>QR</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="second">
+    <ion-row>
+      <ion-col class="" align="center">
+        <ion-icon class="catg" name="cafe" (click)="goToRstApp()"></ion-icon>
+        <p (click)="goToRstApp()">ESATIC-RST</p>
+      </ion-col>
+      <ion-col class="" align="center">
+        <ion-icon class="catg" name="home" (click)="goToHbgApp()"></ion-icon>
+        <p (click)="goToHbgApp()">ESATIC-HBG</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="" align="center">
+        <ion-icon class="catg" name="heart-outline" (click)="goToMedApp()"></ion-icon>
+        <p (click)="goToMedApp()">ESATIC-MED</p>
+      </ion-col>
+      <ion-col class="" align="center">
+        <ion-icon class="catg" name="contact" (click)="goToProfile()"></ion-icon>
+        <p (click)="goToProfile()">Profil</p>
+      </ion-col>
+    </ion-row>
+    <small class="copyright">Digi-tech Prod</small>
+  </ion-grid>
+</ion-content>

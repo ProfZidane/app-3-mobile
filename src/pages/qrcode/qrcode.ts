@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RequestProvider } from './../../providers/request/request';
 
 /**
- * Generated class for the RstPage page.
+ * Generated class for the QrcodePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +11,18 @@ import { RequestProvider } from './../../providers/request/request';
 
 @IonicPage()
 @Component({
-  selector: 'page-rst',
-  templateUrl: 'rst.html',
+  selector: 'page-qrcode',
+  templateUrl: 'qrcode.html',
 })
-export class RstPage {
+export class QrcodePage {
   Compte;
-  Meal;
-  constructor(public navCtrl: NavController, private requestService: RequestProvider, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private requestService: RequestProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RstPage');
+    console.log('ionViewDidLoad QrcodePage');
     this.getCompte();
-    this.getMeal();
   }
 
   getCompte() {
@@ -31,19 +30,7 @@ export class RstPage {
     this.requestService.getCompte(user[0]._id).subscribe(
       (data) => {
         console.log(data);
-        this.Compte = data;
-      }, (err) => {
-        console.log(err);
-      }
-    );
-  }
-
-
-  getMeal() {
-    const user = JSON.parse(localStorage.getItem('userData'));
-    this.requestService.getMealById(user[0]._id).subscribe(
-      (data) => {
-        this.Meal = data;
+        this.Compte = JSON.stringify(data);
       }, (err) => {
         console.log(err);
       }

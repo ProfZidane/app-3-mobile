@@ -1,5 +1,6 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 import { LandingPage } from '../landing/landing';
 
 /**
@@ -15,8 +16,13 @@ import { LandingPage } from '../landing/landing';
   templateUrl: 'home.html',
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Login = {
+    matricule: '',
+    password: ''
+  };
+  warning_alert;
+  danger_alert;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -24,7 +30,33 @@ export class HomePage {
   }
 
   goToLandignPage() {
-    this.navCtrl.push(LandingPage);
+    let loading = this.loadingCtrl.create({
+      content: 'Patientez...'
+    });
+
+    loading.present();
+    this.authService.LogUsers(this.Login).subscribe(
+      (success) => {
+
+        localStorage.setItem('userToken', success.token);
+        localStorage.setItem('userData', JSON.stringify(success.data));
+        loading.dismiss();
+        this.navCtrl.push(LandingPage);
+      }, (error) => {
+        loading.dismiss();
+
+        if (error.status === 400) {
+          this.warning_alert = true;
+          this.danger_alert = false;
+
+        } else if (error.status === 404) {
+          this.danger_alert = true;
+          this.warning_alert = false;
+
+        }
+      }
+    );
+
   }
 
 }

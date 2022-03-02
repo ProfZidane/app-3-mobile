@@ -31,3 +31,25 @@ page-hbg {
     border-radius: 10px;
   }
 }
+
+.alert {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 5px;
+  color: white;
+}
+
+.alert-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.alert-warning {
+  background-color: #ffc107;
+  color: white;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: white;
+}

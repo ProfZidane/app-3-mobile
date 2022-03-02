@@ -13,44 +13,42 @@
 <ion-content fullscreen>
   <ion-grid class="info">
     <span>Mon compte</span>
-    <ion-row class="point">
-      <ion-col>
-        <h4>15 000</h4>
+    <ion-row class="point" *ngIf="Compte" >
+      <ion-col col-8>
+
+      </ion-col>
+      <ion-col col-4>
+        <h4>{{ Compte.somme }}</h4>
         <small>En fcfa</small>
       </ion-col>
       <ion-col>
-        <h4>120</h4>
-        <small>En Points</small>
+        <!--<h4>120</h4>
+        <small>En Points</small>-->
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <h2>Historiques des repas</h2>
 
-  <ion-row>
-    <ion-col col-8>
-      <small class="nomen" item-start>
-        Petit-déjeuner (100 fcfa / 1 point)
-      </small>
-    </ion-col>
-    <ion-col col-4>
-      <small class="date" item-end>
-        12/03/2021 06:40
-      </small>
-    </ion-col>
-  </ion-row>
-  <div class="divided"></div>
-  <ion-row>
-    <ion-col col-8>
-      <small class="nomen" item-start>
-        Déjeuner (200 fcfa / 2 points)
-      </small>
-    </ion-col>
-    <ion-col col-4>
-      <small class="date" item-end>
-        12/03/2021 06:40
-      </small>
-    </ion-col>
-  </ion-row>
-  <div class="divided"></div>
+  <div *ngIf="Meal">
+    <ion-row *ngFor="let meal of Meal" style="border-bottom: solid 1px;margin-top:1.5rem;">
+      <ion-col col-8 *ngIf="meal.somme === '100'"  >
+        <small class="nomen" item-start>
+          Petit-déjeuner (100 fcfa)
+        </small>
+      </ion-col>
+      <ion-col col-8 *ngIf="meal.somme === '200'">
+        <small class="nomen" item-start>
+          Déjeuner (200 fcfa)
+        </small>
+      </ion-col>
+      <ion-col col-4 *ngIf="meal.created_at" >
+        <small class="date" item-end>
+          {{ meal.created_at }}
+        </small>
+      </ion-col>
+      <div class="divided"></div>
+    </ion-row>
+
+  </div>
 </ion-content>

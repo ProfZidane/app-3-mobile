@@ -7,14 +7,14 @@
 <ion-header>
   <ion-toolbar color="dark" style="border: none;">
     <ion-buttons start>
-      <button ion-button icon-only>
-        <ion-icon class="ion-header" name="md-options"></ion-icon>
+      <button ion-button icon-only (click)="reload()">
+        <ion-icon class="ion-header" name="home" style="font-size: 25px; margin-left: 1rem;"></ion-icon>
       </button>
     </ion-buttons>
 
     <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon class="ion-header" name="md-notifications"></ion-icon>
+      <button ion-button icon-only (click)="Logout()">
+        <ion-icon class="ion-header" name="md-exit" style="font-size: 25px; margin-right: 1rem;"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -27,22 +27,22 @@
         <ion-list no-lines>
           <ion-item style="background-color:#222">
             <ion-avatar item-start>
-              <img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257_960_720.png">
+              <img src="http://localhost:3000/uploads/{{ user[0].avatar }}">
             </ion-avatar>
-            <h2 class="name-user">Mohamed Zidane</h2>
-            <p>TWIN 3</p>
+            <h2 class="name-user">{{ user[0].first_name + ' ' + user[0].last_name }}</h2>
+            <p style="text-transform: capitalize;">{{ user[0].filliere }}</p>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
-    <ion-row class="counter" align="center">
+    <ion-row class="counter" align="center" *ngIf="Out && Compte" >
       <ion-col col-6>
-        <h4>12</h4>
+        <h4>{{ Out }}</h4>
         <small>Sorties</small>
       </ion-col>
       <ion-col col-6>
-        <h4>140</h4>
-        <small>Points</small>
+        <h4>{{ Compte.somme }}</h4>
+        <small>Fcfa</small>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -52,7 +52,7 @@
         <p>Code</p>
       </ion-col>
       <ion-col col-4 class="middle-qr" align="center">
-        <img src="https://cdn.pixabay.com/photo/2013/07/12/14/45/qr-code-148732_960_720.png" alt="">
+        <img src="https://cdn.pixabay.com/photo/2013/07/12/14/45/qr-code-148732_960_720.png" (click)="goToQrcode()" alt="">
       </ion-col>
       <ion-col col-4 align="center">
         <p>QR</p>
@@ -71,10 +71,10 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="" align="center">
+      <!--<ion-col class="" align="center">
         <ion-icon class="catg" name="heart-outline" (click)="goToMedApp()"></ion-icon>
         <p (click)="goToMedApp()">ESATIC-MED</p>
-      </ion-col>
+      </ion-col>-->
       <ion-col class="" align="center">
         <ion-icon class="catg" name="contact" (click)="goToProfile()"></ion-icon>
         <p (click)="goToProfile()">Profil</p>

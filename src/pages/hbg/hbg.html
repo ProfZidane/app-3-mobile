@@ -16,66 +16,47 @@
     <small>Veuillez remplir soigneusement le formulaire !</small>
   </ion-grid>
   <ion-grid class="form-group">
+    <div class="alert alert-success" *ngIf="success_alert" >
+      Votre demande est validé !
+    </div>
+    <div class="alert alert-warning" *ngIf="warning_alert" >
+      Une demande est déjà en cours !
+    </div>
+    <div class="alert alert-danger" *ngIf="danger_alert" >
+      Une demande est déjà en cours !
+    </div>
     <ion-row>
-      <ion-col col-6>
-        <small>Nom</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
-      </ion-col>
-      <ion-col col-6>
-        <small>Prénoms</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-6>
-        <small>Fillière</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
-      </ion-col>
-      <ion-col col-6>
-        <small>Classe</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-6>
-        <small>Numéro de téléphone</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
-      </ion-col>
-      <ion-col col-6>
+      <ion-col col-12>
         <small>Numéro d'un parent</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
+        <ion-input class="form-control form-validation" [(ngModel)]="OutInfo.number_tutor" type="text" value=""></ion-input>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-6>
-        <small>Numéro de chambre</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
-      </ion-col>
-      <ion-col col-6>
+      <ion-col col-12>
         <small>Numéro de lit</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
+        <ion-input class="form-control form-validation" [(ngModel)]="OutInfo.bed_number" type="text" value=""></ion-input>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-6>
         <small>Date de départ
         </small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
+        <ion-input class="form-control form-validation" [(ngModel)]="OutInfo.date_started" type="date" value=""></ion-input>
       </ion-col>
       <ion-col col-6>
         <small>Date de retour</small>
-        <ion-input class="form-control form-validation" type="text" value=""></ion-input>
+        <ion-input class="form-control form-validation" [(ngModel)]="OutInfo.date_finish" type="date" value=""></ion-input>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-12>
         <small>Motivation</small>
-        <ion-textarea class="form-control form-validation"></ion-textarea>
+        <ion-textarea class="form-control form-validation" [(ngModel)]="OutInfo.motivation"></ion-textarea>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-12>
-        <button ion-button block round class="btn">ENVOYER</button>
+        <button ion-button block round class="btn" (click)="ValidationForm()">ENVOYER</button>
       </ion-col>
     </ion-row>
   </ion-grid>

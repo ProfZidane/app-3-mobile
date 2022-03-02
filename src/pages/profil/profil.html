@@ -13,16 +13,16 @@
 <ion-content fullscreen>
   <ion-grid class="user-profil-1" align="center">
     <div class="photo">
-      <img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257_960_720.png">
+      <img src="http://localhost:3000/uploads/{{ user[0].avatar }}">
     </div>
   </ion-grid>
   <ion-grid class="user-profil-2">
 
-    <h2 class="name">
-      MOHAMED ZIDANE
+    <h2 class="name" style="text-transform: uppercase;">
+      {{ user[0].first_name + ' ' + user[0].last_name }}
     </h2>
 
-    <span style="text-align: center;">TWIN 3</span>
+    <span style="text-align: center;">{{ user[0].filliere + ' ' + user[0].promo }}</span>
 
   </ion-grid>
   <ion-grid class="user-info">
@@ -33,7 +33,7 @@
         </span>
       </ion-col>
       <ion-col col-7>
-        <span class="value">18400006AB</span>
+        <span class="value">{{ user[0].matricule }}</span>
       </ion-col>
     </ion-row>
     <br>
@@ -44,7 +44,7 @@
         </span>
       </ion-col>
       <ion-col col-7>
-        <span class="value">Madazada0@gmail.com</span>
+        <span class="value">{{ user[0].email }}</span>
       </ion-col>
     </ion-row>
     <br>
@@ -55,7 +55,7 @@
         </span>
       </ion-col>
       <ion-col col-7>
-        <span class="value">79261619</span>
+        <span class="value">{{ user[0].num }}</span>
       </ion-col>
     </ion-row>
     <br>
@@ -66,7 +66,7 @@
         </span>
       </ion-col>
       <ion-col col-7>
-        <span class="value">it07</span>
+        <span class="value">{{ user[0].promo }}</span>
       </ion-col>
     </ion-row>
   </ion-grid>

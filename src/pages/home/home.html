@@ -8,15 +8,19 @@
 <ion-content padding>
   <ion-grid class="logo" align='center'>
    <!--<h1>ESATIC-APP</h1>-->
-   <img src="https://www.esatic.ci/images/logo-wide.png" alt="">
+   <img src="https://esatic.ci/file/2021/11/Logo-ESATIC.png" alt="">
   </ion-grid>
 
   <ion-grid class="form">
     <small>Matricule Etudiant</small>
-    <ion-input class="form-control" type="text" value=""></ion-input>
-    <small>Mot de passe</small>
-    <ion-input class="form-control" type="text" value=""></ion-input>
+    <ion-input class="form-control" type="text" name="matricule" [(ngModel)]="Login.matricule" value=""></ion-input>
+    <small style="color: red;" *ngIf="danger_alert" >Aucun étudiant n'a un tel matricule !</small>
 
+    <br><br>
+    <small>Mot de passe</small>
+
+    <ion-input class="form-control" type="password" name="password" [(ngModel)]="Login.password" value=""></ion-input>
+    <small style="color: yellow;"  *ngIf="warning_alert">Votre mot de passe est incorrecte !</small>
     <br><br>
     <button ion-button round (click)="goToLandignPage()">Se connecter</button>
     <small style="text-align: center;">Mot de passe oublié ?</small>
